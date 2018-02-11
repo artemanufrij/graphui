@@ -45,23 +45,19 @@ namespace GraphUI.Services {
 
         construct {
             output_txt = GraphUIApp.instance.CACHE_FOLDER + "/output.txt";
-            output_image = GraphUIApp.instance.CACHE_FOLDER + "/output.svg";
         }
 
         private GraphViz () {
         }
 
-        public void create_preview (string content, string format) {
+        public void create_preview (string content, string format = "svg") {
             if (!create_tmp_file (content)) {
                 return;
             }
 
-            stdout.printf ("test\n");
+            output_image = GraphUIApp.instance.CACHE_FOLDER + "/output.%s".printf (format);
 
             var command = ("dot -Tsvg %s -o %s").printf (output_txt, output_image);
-
-            stdout.printf ("%s\n", command);
-
             string processout = "";
             string stderr = "";
             int status = 0;
