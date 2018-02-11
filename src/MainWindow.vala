@@ -30,9 +30,20 @@ namespace GraphUI {
         Services.GraphViz graphviz;
 
         Gtk.TextView text;
+        Gtk.Image image;
+        Gtk.ScrolledWindow image_scroll;
 
         construct {
             graphviz = Services.GraphViz.instance;
+            graphviz.image_created.connect (
+                () => {
+                    image.set_from_file (graphviz.output_image);
+                });
+            graphviz.error.connect (
+                (message) => {
+                    image.set_from_icon_name ("dialog-error-symbolic", Gtk.IconSize.DIALOG);
+                    image.tooltip_text = message;
+                });
         }
 
         public MainWindow () {
@@ -41,7 +52,7 @@ namespace GraphUI {
 
         private void build_ui () {
             var headerbar = new Gtk.HeaderBar ();
-            headerbar.title = _("GraphUI");
+            headerbar.title = _ ("GraphUI");
             headerbar.show_close_button = true;
 
             var compile = new Gtk.Button.from_icon_name ("media-playback-start-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
@@ -59,7 +70,9 @@ namespace GraphUI {
             var text_scroll = new Gtk.ScrolledWindow (null, null);
             text_scroll.add (text);
 
-            var image_scroll = new Gtk.ScrolledWindow (null, null);
+            image = new Gtk.Image ();
+            image_scroll = new Gtk.ScrolledWindow (null, null);
+            image_scroll.add (image);
 
             paned.pack1 (text_scroll, false, false);
             paned.pack2 (image_scroll, false, false);

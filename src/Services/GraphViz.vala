@@ -28,9 +28,10 @@
 namespace GraphUI.Services {
     public class GraphViz : GLib.Object {
         string output_txt = "";
-        string output_image = "";
+        public string output_image { get; private set; default = ""; }
 
         public signal void image_created ();
+        public signal void error (string message);
 
         static GraphViz _instance = null;
         public static GraphViz instance {
@@ -51,42 +52,60 @@ namespace GraphUI.Services {
         }
 
         public void create_preview (string content, string format) {
-//            create_tmp_file (content);
+            if (!create_tmp_file (content)) {
+                return;
+            }
 
             stdout.printf ("test\n");
 
-return;
-            var command = ("dot -Tsvg "+output_txt+" -o ~/output.svg");
+            var command = ("dot -Tsvg %s -o %s").printf (output_txt, output_image);
 
             stdout.printf ("%s\n", command);
-            return;
-            string stdout;
-            string stderr;
-            int status;
+
+            string processout = "";
+            string stderr = "";
+            int status = 0;
 
             try {
                 Process.spawn_command_line_sync (
                     command,
-                    out stdout,
+                    out processout,
                     out stderr,
                     out status
                     );
             } catch (SpawnError e) {
                 stdout.printf ("Error: %s\n", e.message);
+                error (e.message);
+                return;
             }
+
+            if (stderr != "") {
+                error (stderr);
+                return;
+            }
+
+            image_created ();
         }
 
         private bool create_tmp_file (string content) {
-            File file = File.new_for_path (output_txt);
-            if (file.query_exists ()) {
-                file.delete ();
-            }
-            FileIOStream ios = file.create_readwrite (FileCreateFlags.PRIVATE);
+            try {
+                File file = File.new_for_path (output_txt);
+                if (file.query_exists ()) {
+                    file.delete ();
+                }
+                FileIOStream ios = file.create_readwrite (FileCreateFlags.PRIVATE);
 
-            FileOutputStream os = ios.output_stream as FileOutputStream;
-            os.write (content.data);
-            os.close ();
-            return true;
+                FileOutputStream os = ios.output_stream as FileOutputStream;
+                os.write (content.data);
+                os.close ();
+                ios.close ();
+                file.dispose ();
+                return true;
+            } catch (Error err) {
+                warning (err.message);
+            }
+
+            return false;
         }
     }
 }
