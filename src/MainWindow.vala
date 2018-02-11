@@ -27,6 +27,14 @@
 
 namespace GraphUI {
     public class MainWindow : Gtk.Window {
+        Services.GraphViz graphviz;
+
+        Gtk.TextView text;
+
+        construct {
+            graphviz = Services.GraphViz.instance;
+        }
+
         public MainWindow () {
             build_ui ();
         }
@@ -36,11 +44,18 @@ namespace GraphUI {
             headerbar.title = _("GraphUI");
             headerbar.show_close_button = true;
 
+            var compile = new Gtk.Button.from_icon_name ("media-playback-start-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+            compile.clicked.connect (
+                () => {
+                    graphviz.create_preview (text.buffer.text, "svg");
+                });
+            headerbar.pack_start (compile);
+
             this.set_titlebar (headerbar);
 
             var paned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
 
-            var text = new Gtk.TextView ();
+            text = new Gtk.TextView ();
             var text_scroll = new Gtk.ScrolledWindow (null, null);
             text_scroll.add (text);
 
@@ -50,7 +65,6 @@ namespace GraphUI {
             paned.pack2 (image_scroll, false, false);
 
             this.add (paned);
-
             this.show_all ();
         }
     }

@@ -3,6 +3,7 @@ configure_file (${CMAKE_SOURCE_DIR}/Config.vala.cmake ${CONFIG_FILE})
 
 vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
     ${CONFIG_FILE}
+    Services/GraphViz.vala
     MainWindow.vala
     Application.vala
 PACKAGES

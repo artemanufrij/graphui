@@ -26,11 +26,10 @@
  */
 
 namespace GraphUI {
-
     public class GraphUIApp : Gtk.Application {
+        public string CACHE_FOLDER { get; private set; }
 
         static GraphUIApp _instance = null;
-
         public static GraphUIApp instance {
             get {
                 if (_instance == null)
@@ -40,6 +39,20 @@ namespace GraphUI {
         }
 
         construct {
+            this.application_id = "com.github.artemanufrij.graphui";
+            create_cache_folder ();
+        }
+
+        public void create_cache_folder () {
+            CACHE_FOLDER = GLib.Path.build_filename (GLib.Environment.get_user_cache_dir (), this.application_id);
+            try {
+                File file = File.new_for_path (CACHE_FOLDER);
+                if (!file.query_exists ()) {
+                    file.make_directory ();
+                }
+            } catch (Error e) {
+                warning (e.message);
+            }
         }
 
         MainWindow mainwindow;
@@ -51,7 +64,7 @@ namespace GraphUI {
             }
 
             mainwindow = new MainWindow ();
-            mainwindow.set_application(this);
+            mainwindow.set_application (this);
         }
     }
 }
