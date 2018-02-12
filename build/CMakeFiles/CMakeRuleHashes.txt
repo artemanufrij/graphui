@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+d6a9db2ee03bbd7e5fc51ac107633757 src/Config.c
+cce05cd2946a38197a95982336581860 src/com.github.artemanufrij.graphui_valac.stamp

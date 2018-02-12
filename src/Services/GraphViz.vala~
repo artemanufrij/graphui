@@ -76,7 +76,7 @@ namespace GraphUI.Services {
             }
 
             if (stderr != "") {
-                error (stderr.replace (output_txt + ": ", "").strip ());
+                error (stderr);
                 return;
             }
 
