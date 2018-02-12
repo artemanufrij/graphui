@@ -109,7 +109,12 @@ namespace GraphUI {
         }
 
         public void create_preview () {
-            graphviz.create_preview (text.buffer.text, format_chooser.active_id);
+            var graph_text = text.buffer.text.strip ();
+            if (graph_text.length == 0) {
+                return;
+            }
+
+            graphviz.create_preview (graph_text, format_chooser.active_id);
         }
 
         public void open_file_action () {
