@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=GraphUI
+GenericName=GraphUI
+Comment=Graph Visualisation
+Keywords=graph;visual;draw;
+Exec=com.github.artemanufrij.graphui %U
+Icon=com.github.artemanufrij.graphui
+Terminal=false
+Type=Application
+Categories=Development;GNOME;GTK;
+X-GNOME-Gettext-Domain=com.github.artemanufrij.graphui

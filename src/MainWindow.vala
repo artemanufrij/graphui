@@ -108,17 +108,17 @@ namespace GraphUI {
             this.show_all ();
         }
 
-        private void create_preview () {
+        public void create_preview () {
             graphviz.create_preview (text.buffer.text, format_chooser.active_id);
         }
 
-        private void open_file_action () {
+        public void open_file_action () {
             var file_dialog = new Gtk.FileChooserDialog (
-                    _ ("Choose an graphviz file…"),
-                    this,
-                    Gtk.FileChooserAction.OPEN,
-                    _ ("_Cancel"), Gtk.ResponseType.CANCEL,
-                    _ ("_Open"), Gtk.ResponseType.ACCEPT);
+                _ ("Choose an graphviz file…"),
+                this,
+                Gtk.FileChooserAction.OPEN,
+                _ ("_Cancel"), Gtk.ResponseType.CANCEL,
+                _ ("_Open"), Gtk.ResponseType.ACCEPT);
 
             var filter = new Gtk.FileFilter ();
             filter.set_filter_name (_ ("Graphviz"));
@@ -135,7 +135,6 @@ namespace GraphUI {
 
             text.buffer.text = "";
 
-
             current_file = File.new_for_path (filname);
             try {
                 DataInputStream dis = new DataInputStream (current_file.read ());
@@ -149,22 +148,24 @@ namespace GraphUI {
             } catch (Error err) {
                 warning (err.message);
             }
+
+            create_preview ();
         }
 
-        private void new_file_action () {
+        public void new_file_action () {
             current_file = null;
             text.buffer.text = "";
         }
 
-        private void save_file_action () {
+        public void save_file_action () {
             if (current_file == null) {
                 var file_dialog = new Gtk.FileChooserDialog (
                     _ ("Save as…"), this,
                     Gtk.FileChooserAction.SAVE,
-                    _("Cancel"), Gtk.ResponseType.CANCEL,
-                    _("Save"), Gtk.ResponseType.ACCEPT);
+                    _ ("Cancel"), Gtk.ResponseType.CANCEL,
+                    _ ("Save"), Gtk.ResponseType.ACCEPT);
 
-                file_dialog.set_current_name (_("New Graphviz.txt"));
+                file_dialog.set_current_name (_ ("New Graphviz.txt"));
 
                 var filter = new Gtk.FileFilter ();
                 filter.set_filter_name ("Graphviz");
@@ -184,13 +185,23 @@ namespace GraphUI {
                 }
             }
             if (current_file.query_exists ()) {
-                current_file.delete ();
+                try {
+                    current_file.delete ();
+                } catch (Error err) {
+                    warning (err.message);
+                    return;
+                }
             }
-            FileIOStream ios = current_file.create_readwrite (FileCreateFlags.PRIVATE);
-            FileOutputStream os = ios.output_stream as FileOutputStream;
-            os.write (text.buffer.text.data);
-            os.close ();
-            ios.close ();
+
+            try {
+                FileIOStream ios = current_file.create_readwrite (FileCreateFlags.PRIVATE);
+                FileOutputStream os = ios.output_stream as FileOutputStream;
+                os.write (text.buffer.text.data);
+                os.close ();
+                ios.close ();
+            } catch (Error err) {
+                    warning (err.message);
+            }
         }
     }
 }

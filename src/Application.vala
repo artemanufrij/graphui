@@ -41,6 +41,46 @@ namespace GraphUI {
         construct {
             this.application_id = "com.github.artemanufrij.graphui";
             create_cache_folder ();
+
+            var action_open = new SimpleAction ("open", null);
+            add_action (action_open);
+            add_accelerator ("<Control>o", "app.open", null);
+            action_open.activate.connect (
+                () => {
+                    if (mainwindow != null) {
+                        mainwindow.open_file_action ();
+                    }
+                });
+
+            var action_save = new SimpleAction ("save", null);
+            add_action (action_save);
+            add_accelerator ("<Control>s", "app.save", null);
+            action_save.activate.connect (
+                () => {
+                    if (mainwindow != null) {
+                        mainwindow.save_file_action ();
+                    }
+                });
+
+            var action_new = new SimpleAction ("new", null);
+            add_action (action_new);
+            add_accelerator ("<Control>n", "app.new", null);
+            action_new.activate.connect (
+                () => {
+                    if (mainwindow != null) {
+                        mainwindow.new_file_action ();
+                    }
+                });
+
+            var action_compile = new SimpleAction ("compile", null);
+            add_action (action_compile);
+            add_accelerator ("F5", "app.compile", null);
+            action_compile.activate.connect (
+                () => {
+                    if (mainwindow != null) {
+                        mainwindow.create_preview ();
+                    }
+                });
         }
 
         public void create_cache_folder () {
