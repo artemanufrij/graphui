@@ -54,7 +54,7 @@ namespace GraphUI {
         }
 
         private void build_ui () {
-            this.width_request = 900;
+            this.width_request = 1000;
             this.height_request = 600;
 
             var headerbar = new Gtk.HeaderBar ();
