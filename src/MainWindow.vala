@@ -112,7 +112,6 @@ namespace GraphUI {
 
             image = new Gtk.Image ();
 
-
             alert_view = new Granite.Widgets.AlertView (_ ("Graph Visualization"), _ ("represent structural information as diagrams of abstract graphs and networks"), "edit");
 
             stack = new Gtk.Stack ();
