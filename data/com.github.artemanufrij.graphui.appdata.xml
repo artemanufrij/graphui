@@ -8,6 +8,14 @@
     <summary>Graph Visualization</summary>
     <description>
         <p>Graph visualization based on graphviz.</p>
+        <p>Supported types:</p>
+        <ul>
+            <li>dot</li>
+            <li>neato</li>
+            <li>fdp</li>
+            <li>sfdp</li>
+            <li>twopi</li>
+        </ul>
     </description>
     <categories>
         <category>Development</category>
@@ -24,7 +32,7 @@
     <update_contact>artem.anufrij@live.de</update_contact>
     <screenshots>
         <screenshot type="default">
-            <caption>Albums</caption>
+            <caption>Example</caption>
             <image>https://raw.githubusercontent.com/artemanufrij/graphui/master/screenshots/Screenshot.png</image>
         </screenshot>
     </screenshots>
