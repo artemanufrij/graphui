@@ -38,11 +38,13 @@
     </screenshots>
     <releases>
         <release version="0.1.2" date="2018-02-20">
-            <p>New:</p>
-            <ul>
-                <li>Support for dot, neato, fdp, sfdp, twopi</li>
-                <li>Show details on error screen</li>
-            </ul>
+            <description>
+                <p>New:</p>
+                <ul>
+                    <li>Support for dot, neato, fdp, sfdp, twopi</li>
+                    <li>Show details on error screen</li>
+                </ul>
+            </description>
         </release>
         <release version="0.1.0" date="2018-02-15">
             <description>
