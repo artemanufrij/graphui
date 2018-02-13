@@ -70,14 +70,17 @@ namespace GraphUI {
 
             var new_file = new Gtk.Button.from_icon_name ("document-new", Gtk.IconSize.LARGE_TOOLBAR);
             new_file.clicked.connect (new_file_action);
+            new_file.tooltip_text = _("New File");
             headerbar.pack_start (new_file);
 
             var open_file = new Gtk.Button.from_icon_name ("document-open", Gtk.IconSize.LARGE_TOOLBAR);
             open_file.clicked.connect (open_file_action);
+            open_file.tooltip_text = _("Open File");
             headerbar.pack_start (open_file);
 
             var save_as = new Gtk.Button.from_icon_name ("document-save-as", Gtk.IconSize.LARGE_TOOLBAR);
             save_as.clicked.connect (save_file_action);
+            save_as.tooltip_text = _("Save File");
             headerbar.pack_start (save_as);
 
             var compile = new Gtk.Button.from_icon_name ("media-playback-start-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
@@ -91,7 +94,7 @@ namespace GraphUI {
             format_chooser.append ("sfdp", "sfdp");
             format_chooser.append ("twopi", "twopi");
             format_chooser.active_id = "dot";
-            format_chooser.tooltip_text = _ ("Format");
+            format_chooser.tooltip_text = _ ("Type");
             format_chooser.valign = Gtk.Align.CENTER;
             format_chooser.changed.connect (create_preview);
 
