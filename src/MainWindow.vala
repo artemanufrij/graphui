@@ -41,6 +41,7 @@ namespace GraphUI {
             graphviz.image_created.connect (
                 () => {
                     image.set_from_file (graphviz.output_image);
+                    image.tooltip_text = "";
                 });
             graphviz.error.connect (
                 (message) => {
