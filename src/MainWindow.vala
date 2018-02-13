@@ -35,18 +35,24 @@ namespace GraphUI {
         Gtk.Image image;
         Gtk.ScrolledWindow image_scroll;
         Gtk.ComboBoxText format_chooser;
+        Gtk.Stack stack;
+        Granite.Widgets.AlertView alert_view;
+
 
         construct {
             graphviz = Services.GraphViz.instance;
             graphviz.image_created.connect (
                 () => {
                     image.set_from_file (graphviz.output_image);
-                    image.tooltip_text = "";
+                    stack.visible_child_name = "image";
                 });
             graphviz.error.connect (
                 (message) => {
-                    image.set_from_icon_name ("dialog-error-symbolic", Gtk.IconSize.DIALOG);
-                    image.tooltip_text = message;
+                    image.set_from_file (null);
+                    stack.visible_child_name = "alert";
+                    alert_view.title = _ ("Error");
+                    alert_view.description = message;
+                    alert_view.icon_name = "dialog-error-symbolic";
                 });
         }
 
@@ -79,9 +85,12 @@ namespace GraphUI {
             headerbar.pack_end (compile);
 
             format_chooser = new Gtk.ComboBoxText ();
-            format_chooser.append ("svg", ".svg");
-            format_chooser.append ("sng", ".png");
-            format_chooser.active_id = "svg";
+            format_chooser.append ("dot", "dot");
+            format_chooser.append ("neato", "neato");
+            format_chooser.append ("fdp", "fdp");
+            format_chooser.append ("sfdp", "sfdp");
+            format_chooser.append ("twopi", "twopi");
+            format_chooser.active_id = "dot";
             format_chooser.tooltip_text = _ ("Format");
             format_chooser.valign = Gtk.Align.CENTER;
             format_chooser.changed.connect (create_preview);
@@ -99,8 +108,16 @@ namespace GraphUI {
             text_scroll.add (text);
 
             image = new Gtk.Image ();
+
+
+            alert_view = new Granite.Widgets.AlertView (_ ("Graph Visualization"), _ ("represent structural information as diagrams of abstract graphs and networks"), "edit");
+
+            stack = new Gtk.Stack ();
+            stack.add_named (alert_view, "alert");
+            stack.add_named (image, "image");
+
             image_scroll = new Gtk.ScrolledWindow (null, null);
-            image_scroll.add (image);
+            image_scroll.add (stack);
 
             paned.pack1 (text_scroll, false, false);
             paned.pack2 (image_scroll, false, false);

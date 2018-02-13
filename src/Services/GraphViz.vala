@@ -50,14 +50,14 @@ namespace GraphUI.Services {
         private GraphViz () {
         }
 
-        public void create_preview (string content, string format = "svg") {
+        public void create_preview (string content, string format = "dot") {
             if (!create_tmp_file (content)) {
                 return;
             }
 
-            output_image = GraphUIApp.instance.CACHE_FOLDER + "/output.%s".printf (format);
+            output_image = GraphUIApp.instance.CACHE_FOLDER + "/output.svg";
 
-            var command = ("dot -Tsvg %s -o %s").printf (output_txt, output_image);
+            var command = ("%s -Tsvg %s -o %s").printf (format, output_txt, output_image);
             string processout = "";
             string stderr = "";
             int status = 0;
