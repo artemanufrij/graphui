@@ -44,6 +44,7 @@ namespace GraphUI {
                 () => {
                     image.set_from_file (graphviz.output_image);
                     stack.visible_child_name = "image";
+                    alert_view.description = "";
                 });
             graphviz.error.connect (
                 (message) => {
