@@ -19,6 +19,7 @@ find_package (PkgConfig)
 pkg_check_modules (DEPS REQUIRED
     gtk+-3.0>=3.11.6
     granite
+    gtksourceview-3.0
 )
 
 # Comment this out to enable C compiler warnings

@@ -31,13 +31,12 @@ namespace GraphUI {
 
         File ? current_file = null;
 
-        Gtk.TextView text;
+        Gtk.SourceView text;
         Gtk.Image image;
         Gtk.ScrolledWindow image_scroll;
         Gtk.ComboBoxText format_chooser;
         Gtk.Stack stack;
         Granite.Widgets.AlertView alert_view;
-
 
         construct {
             graphviz = Services.GraphViz.instance;
@@ -104,10 +103,10 @@ namespace GraphUI {
 
             var paned = new Gtk.Paned (Gtk.Orientation.HORIZONTAL);
 
-            text = new Gtk.TextView ();
+            text = new Gtk.SourceView ();
             text.top_margin = text.left_margin = text.bottom_margin = text.right_margin = 12;
             var text_scroll = new Gtk.ScrolledWindow (null, null);
-            text_scroll.expand = true;
+
             text_scroll.add (text);
 
             image = new Gtk.Image ();
