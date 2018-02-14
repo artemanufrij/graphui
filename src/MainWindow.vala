@@ -224,6 +224,7 @@ namespace GraphUI {
                 os.write (text.buffer.text.data);
                 os.close ();
                 ios.close ();
+                create_preview ();
             } catch (Error err) {
                     warning (err.message);
             }
