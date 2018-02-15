@@ -50,14 +50,29 @@ namespace GraphUI.Services {
         private GraphViz () {
         }
 
-        public void create_preview (string content, string format = "dot") {
+        public void export (string path, string content, string format) {
+            if (!path.down ().has_suffix ("svg")) {
+                create_preview (content, format, "png");
+            } else {
+                create_preview (content, format);
+            }
+
+            var file_dst = File.new_for_path (path);
+            var file_src = File.new_for_path (output_image);
+            file_src.copy_async (file_dst, GLib.FileCopyFlags.OVERWRITE);
+
+            file_dst.dispose ();
+            file_src.dispose ();
+        }
+
+        public void create_preview (string content, string format = "dot", string type = "svg") {
             if (!create_tmp_file (content)) {
                 return;
             }
 
             output_image = GraphUIApp.instance.CACHE_FOLDER + "/output.svg";
 
-            var command = ("%s -Tsvg %s -o %s").printf (format, output_txt, output_image);
+            var command = ("%s -T%s %s -o %s").printf (format, type, output_txt, output_image);
             string processout = "";
             string stderr = "";
             int status = 0;

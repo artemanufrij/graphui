@@ -115,6 +115,14 @@ namespace GraphUI {
                     preferences.run ();
                 });
 
+            var menu_item_export = new Gtk.MenuItem.with_label (_ ("Export"));
+            menu_item_export.activate.connect (
+                () => {
+                    export_action ();
+                });
+
+            settings_menu.append (menu_item_export);
+            settings_menu.append (new Gtk.SeparatorMenuItem ());
             settings_menu.append (menu_item_preferences);
             settings_menu.show_all ();
 
@@ -313,6 +321,40 @@ namespace GraphUI {
             }
 
             headerbar.title = current_file.get_basename ();
+        }
+
+        private void export_action () {
+            var file_dialog = new Gtk.FileChooserDialog (
+                _ ("Save as…"), this,
+                Gtk.FileChooserAction.SAVE,
+                _ ("Cancel"), Gtk.ResponseType.CANCEL,
+                _ ("Save"), Gtk.ResponseType.ACCEPT);
+
+            if (current_file != null) {
+                file_dialog.set_current_name (Utils.strip_filename (current_file.get_basename ()));
+            } else {
+                file_dialog.set_current_name (_("Export"));
+            }
+
+            var filter_png = new Gtk.FileFilter ();
+            filter_png.set_filter_name ("png");
+            filter_png.add_mime_type ("image/png");
+
+            var filter_svg = new Gtk.FileFilter ();
+            filter_svg.set_filter_name ("svg");
+            filter_svg.add_mime_type ("image/svg+xml");
+
+            file_dialog.add_filter (filter_png);
+            file_dialog.add_filter (filter_svg);
+
+            if (file_dialog.run () == Gtk.ResponseType.ACCEPT) {
+                var filename = file_dialog.get_filename ();
+                if (!filename.down ().has_suffix (file_dialog.filter.get_filter_name ())) {
+                    filename += "." + file_dialog.filter.get_filter_name ();
+                }
+                graphviz.export (filename, text.buffer.text, format_chooser.active_id);
+            }
+            file_dialog.destroy ();
         }
 
         private void load_settings () {

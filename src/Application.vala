@@ -33,8 +33,9 @@ namespace GraphUI {
         static GraphUIApp _instance = null;
         public static GraphUIApp instance {
             get {
-                if (_instance == null)
+                if (_instance == null) {
                     _instance = new GraphUIApp ();
+                }
                 return _instance;
             }
         }

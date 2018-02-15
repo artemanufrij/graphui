@@ -5,6 +5,7 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
     ${CONFIG_FILE}
     Services/GraphViz.vala
     Dialogs/Preferences.vala
+    Utils/Utils.vala
     Settings.vala
     MainWindow.vala
     Application.vala
