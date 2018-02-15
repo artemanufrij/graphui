@@ -226,25 +226,27 @@ namespace GraphUI {
             var filname = file_dialog.get_filename ();
             file_dialog.destroy ();
 
-            text.buffer.text = "";
-
             current_file = File.new_for_path (filname);
             read_file_content (current_file);
         }
 
         private void read_file_content (File file) {
+            text.buffer.text = "";
             try {
                 DataInputStream dis = new DataInputStream (file.read ());
                 string line;
 
                 while ((line = dis.read_line ()) != null) {
-                    text.buffer.text +=line +"\n";
+                    if (text.buffer.text == "") {
+                        text.buffer.text = line;
+                    } else {
+                        text.buffer.text += "\n" + line;
+                    }
                 }
 
                 dis.close ();
 
                 headerbar.title = file.get_basename ();
-
             } catch (Error err) {
                 warning (err.message);
             }
