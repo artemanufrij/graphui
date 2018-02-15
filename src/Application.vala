@@ -28,6 +28,7 @@
 namespace GraphUI {
     public class GraphUIApp : Gtk.Application {
         public string CACHE_FOLDER { get; private set; }
+        public string AUTOSAVE_FILE { get; private set; }
 
         static GraphUIApp _instance = null;
         public static GraphUIApp instance {
@@ -90,6 +91,8 @@ namespace GraphUI {
                 if (!file.query_exists ()) {
                     file.make_directory ();
                 }
+
+                AUTOSAVE_FILE = GLib.Path.build_filename (CACHE_FOLDER, "autosave.txt");
             } catch (Error e) {
                 warning (e.message);
             }

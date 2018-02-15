@@ -32,6 +32,7 @@ namespace GraphUI {
 
         File ? current_file = null;
 
+        Gtk.HeaderBar headerbar;
         Gtk.SourceView text;
         Gtk.Image image;
         Gtk.ScrolledWindow image_scroll;
@@ -42,14 +43,15 @@ namespace GraphUI {
 
         construct {
             settings = Settings.get_default ();
-            settings.notify["use-dark-theme"].connect (() => {
-                Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.use_dark_theme;
-                if (settings.use_dark_theme) {
-                    app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
-                } else {
-                    app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR));
-                }
-            });
+            settings.notify["use-dark-theme"].connect (
+                () => {
+                    Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.use_dark_theme;
+                    if (settings.use_dark_theme) {
+                        app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
+                    } else {
+                        app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR));
+                    }
+                });
 
             graphviz = Services.GraphViz.instance;
             graphviz.image_created.connect (
@@ -71,17 +73,18 @@ namespace GraphUI {
         public MainWindow () {
             load_settings ();
             build_ui ();
-            this.configure_event.connect ((event) => {
-                settings.window_width = event.width;
-                settings.window_height = event.height;
-                return false;
-            });
+            this.configure_event.connect (
+                (event) => {
+                    settings.window_width = event.width;
+                    settings.window_height = event.height;
+                    return false;
+                });
             this.delete_event.connect (
                 () => {
-                    if (settings.auto_save_on_close) {
+                    if (settings.auto_save_on_close && text.buffer.text.strip ().length > 0) {
                         save_file_action (true);
                     }
-                    
+
                     save_settings ();
                     return false;
                 });
@@ -91,7 +94,7 @@ namespace GraphUI {
             this.width_request = 1000;
             this.height_request = 600;
 
-            var headerbar = new Gtk.HeaderBar ();
+            headerbar = new Gtk.HeaderBar ();
             headerbar.title = _ ("GraphUI");
             headerbar.show_close_button = true;
 
@@ -105,11 +108,12 @@ namespace GraphUI {
 
             var settings_menu = new Gtk.Menu ();
 
-            var menu_item_preferences = new Gtk.MenuItem.with_label (_("Preferences"));
-            menu_item_preferences.activate.connect (() => {
-                var preferences = new Dialogs.Preferences (this);
-                preferences.run ();
-            });
+            var menu_item_preferences = new Gtk.MenuItem.with_label (_ ("Preferences"));
+            menu_item_preferences.activate.connect (
+                () => {
+                    var preferences = new Dialogs.Preferences (this);
+                    preferences.run ();
+                });
 
             settings_menu.append (menu_item_preferences);
             settings_menu.show_all ();
@@ -128,7 +132,10 @@ namespace GraphUI {
             headerbar.pack_start (open_file);
 
             var save_as = new Gtk.Button.from_icon_name ("document-save-as", Gtk.IconSize.LARGE_TOOLBAR);
-            save_as.clicked.connect (save_file_action);
+            save_as.clicked.connect (
+                () => {
+                    save_file_action ();
+                });
             save_as.tooltip_text = _ ("Save File");
             headerbar.pack_start (save_as);
 
@@ -176,6 +183,8 @@ namespace GraphUI {
 
             this.add (paned);
             this.show_all ();
+
+            check_for_autosave ();
         }
 
         public void create_preview () {
@@ -185,6 +194,15 @@ namespace GraphUI {
             }
 
             graphviz.create_preview (graph_text, format_chooser.active_id);
+        }
+
+        public void check_for_autosave () {
+            var file = File.new_for_path (GraphUIApp.instance.AUTOSAVE_FILE);
+
+            if (file.query_exists ()) {
+                read_file_content (file);
+                file.delete_async.begin ();
+            }
         }
 
         public void open_file_action () {
@@ -211,8 +229,12 @@ namespace GraphUI {
             text.buffer.text = "";
 
             current_file = File.new_for_path (filname);
+            read_file_content (current_file);
+        }
+
+        private void read_file_content (File file) {
             try {
-                DataInputStream dis = new DataInputStream (current_file.read ());
+                DataInputStream dis = new DataInputStream (file.read ());
                 string line;
 
                 while ((line = dis.read_line ()) != null) {
@@ -220,6 +242,9 @@ namespace GraphUI {
                 }
 
                 dis.close ();
+
+                headerbar.title = file.get_basename ();
+
             } catch (Error err) {
                 warning (err.message);
             }
@@ -230,12 +255,12 @@ namespace GraphUI {
         public void new_file_action () {
             current_file = null;
             text.buffer.text = "";
+            headerbar.title = _ ("GraphUI");
         }
 
         public void save_file_action (bool closing=false) {
-
             if (current_file == null && closing) {
-                current_file = File.new_for_path (GraphUIApp.instance.)
+                current_file = File.new_for_path (GraphUIApp.instance.AUTOSAVE_FILE);
             }
 
             if (current_file == null) {
@@ -282,7 +307,10 @@ namespace GraphUI {
                 create_preview ();
             } catch (Error err) {
                 warning (err.message);
+                return;
             }
+
+            headerbar.title = current_file.get_basename ();
         }
 
         private void load_settings () {
