@@ -37,10 +37,20 @@ namespace GraphUI {
         Gtk.ScrolledWindow image_scroll;
         Gtk.ComboBoxText format_chooser;
         Gtk.Stack stack;
+        Gtk.MenuButton app_menu;
         Granite.Widgets.AlertView alert_view;
 
         construct {
             settings = Settings.get_default ();
+            settings.notify["use-dark-theme"].connect (() => {
+                Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.use_dark_theme;
+                if (settings.use_dark_theme) {
+                    app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
+                } else {
+                    app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR));
+                }
+            });
+
             graphviz = Services.GraphViz.instance;
             graphviz.image_created.connect (
                 () => {
@@ -80,6 +90,28 @@ namespace GraphUI {
             var headerbar = new Gtk.HeaderBar ();
             headerbar.title = _ ("GraphUI");
             headerbar.show_close_button = true;
+
+            app_menu = new Gtk.MenuButton ();
+            app_menu.valign = Gtk.Align.CENTER;
+            if (settings.use_dark_theme) {
+                app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
+            } else {
+                app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR));
+            }
+
+            var settings_menu = new Gtk.Menu ();
+
+            var menu_item_preferences = new Gtk.MenuItem.with_label (_("Preferences"));
+            menu_item_preferences.activate.connect (() => {
+                var preferences = new Dialogs.Preferences (this);
+                preferences.run ();
+            });
+
+            settings_menu.append (menu_item_preferences);
+            settings_menu.show_all ();
+
+            app_menu.popup = settings_menu;
+            headerbar.pack_end (app_menu);
 
             var new_file = new Gtk.Button.from_icon_name ("document-new", Gtk.IconSize.LARGE_TOOLBAR);
             new_file.clicked.connect (new_file_action);
