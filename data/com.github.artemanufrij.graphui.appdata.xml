@@ -46,6 +46,10 @@
     <releases>
         <release version="0.1.4" date="2018-02-20">
             <description>
+                <p>New:</p>
+                <ul>
+                    <li>Option for autosave on closing</li>
+                </ul>
                 <p>Improvements:</p>
                 <ul>
                     <li>Moved to SourceView for undo support</li>
