@@ -57,6 +57,7 @@
                 <ul>
                     <li>Moved to SourceView for undo support</li>
                     <li>Reload image after saving file</li>
+                    <li>Clear resutl image for 'New File'</li>
                 </ul>
                 <p>Fixed:</p>
                 <ul>

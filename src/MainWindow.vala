@@ -264,8 +264,10 @@ namespace GraphUI {
 
         public void new_file_action () {
             current_file = null;
-            text.buffer.text = "";
+            image.set_from_file (null);
             headerbar.title = _ ("GraphUI");
+            text.buffer.text = "";
+            text.grab_focus ();
         }
 
         public void save_file_action (bool closing=false) {
