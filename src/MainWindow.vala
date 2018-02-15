@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2018 Artem Anufrij <artem.anufrij@live.de>
+ * Copyright (c) 2018-2018 Artem Anufrij <artem.anufrij@live.de>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
@@ -28,6 +28,7 @@
 namespace GraphUI {
     public class MainWindow : Gtk.Window {
         Services.GraphViz graphviz;
+        Settings settings;
 
         File ? current_file = null;
 
@@ -39,6 +40,7 @@ namespace GraphUI {
         Granite.Widgets.AlertView alert_view;
 
         construct {
+            settings = Settings.get_default ();
             graphviz = Services.GraphViz.instance;
             graphviz.image_created.connect (
                 () => {
@@ -57,7 +59,18 @@ namespace GraphUI {
         }
 
         public MainWindow () {
+            load_settings ();
             build_ui ();
+            this.configure_event.connect ((event) => {
+                settings.window_width = event.width;
+                settings.window_height = event.height;
+                return false;
+            });
+            this.delete_event.connect (
+                () => {
+                    save_settings ();
+                    return false;
+                });
         }
 
         private void build_ui () {
@@ -229,6 +242,25 @@ namespace GraphUI {
             } catch (Error err) {
                 warning (err.message);
             }
+        }
+
+        private void load_settings () {
+            this.set_default_size (settings.window_width, settings.window_height);
+
+            if (settings.window_x < 0 || settings.window_y < 0 ) {
+                this.window_position = Gtk.WindowPosition.CENTER;
+            } else {
+                this.move (settings.window_x, settings.window_y);
+            }
+
+            Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.use_dark_theme;
+        }
+
+        private void save_settings () {
+            int x, y;
+            this.get_position (out x, out y);
+            settings.window_x = x;
+            settings.window_y = y;
         }
     }
 }

@@ -1,0 +1,29 @@
+<schemalist>
+	<schema path="/com/github/artemanufrij/graphui/" id="com.github.artemanufrij.graphui" gettext-domain="com.github.artemanufrij.graphui">
+		<key name="window-width" type="i">
+			<default>1000</default>
+			<summary>The saved width of the window.</summary>
+			<description>The saved width of the window.</description>
+		</key>
+		<key name="window-height" type="i">
+			<default>640</default>
+			<summary>The saved height of the window.</summary>
+			<description>The saved height of the window.</description>
+		</key>
+		<key name="window-x" type="i">
+			<default>-1</default>
+			<summary>The saved x-position of the window.</summary>
+			<description>The saved x-position of the window.</description>
+		</key>
+		<key name="window-y" type="i">
+			<default>-1</default>
+			<summary>The saved y-position of the window.</summary>
+			<description>The saved y-position of the window.</description>
+		</key>
+		<key name="use-dark-theme" type="b">
+			<default>false</default>
+			<summary>Use Dark Theme.</summary>
+			<description>Use Dark Theme.</description>
+		</key>
+	</schema>
+</schemalist>
