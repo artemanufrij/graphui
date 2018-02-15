@@ -25,5 +25,10 @@
 			<summary>Use Dark Theme.</summary>
 			<description>Use Dark Theme.</description>
 		</key>
+		<key name="auto-save-on-close" type="b">
+			<default>true</default>
+			<summary>Save changes when closing</summary>
+			<description>Save changes when closing</description>
+		</key>
 	</schema>
 </schemalist>

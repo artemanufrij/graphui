@@ -78,6 +78,10 @@ namespace GraphUI {
             });
             this.delete_event.connect (
                 () => {
+                    if (settings.auto_save_on_close) {
+                        save_file_action (true);
+                    }
+                    
                     save_settings ();
                     return false;
                 });
@@ -228,7 +232,12 @@ namespace GraphUI {
             text.buffer.text = "";
         }
 
-        public void save_file_action () {
+        public void save_file_action (bool closing=false) {
+
+            if (current_file == null && closing) {
+                current_file = File.new_for_path (GraphUIApp.instance.)
+            }
+
             if (current_file == null) {
                 var file_dialog = new Gtk.FileChooserDialog (
                     _ ("Save as…"), this,

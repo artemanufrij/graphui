@@ -65,8 +65,18 @@ namespace GraphUI.Dialogs {
                 settings.use_dark_theme = use_dark_theme.active;
             });
 
+            var save_on_close_label = new Gtk.Label (_("Autosave on closing"));
+            save_on_close_label.halign = Gtk.Align.START;
+            var save_on_close = new Gtk.Switch ();
+            save_on_close.active = settings.auto_save_on_close;
+            save_on_close.notify["active"].connect (() => {
+                settings.auto_save_on_close = save_on_close.active;
+            });
+
             grid.attach (use_dark_theme_label, 0, 0);
             grid.attach (use_dark_theme, 1, 0);
+            grid.attach (save_on_close_label, 0, 1);
+            grid.attach (save_on_close, 1, 1);
 
             content.pack_start (grid, false, false, 0);
 

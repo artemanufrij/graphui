@@ -39,6 +39,7 @@ namespace GraphUI {
         public int window_x { get; set; }
         public int window_y { get; set; }
         public bool use_dark_theme { get; set; }
+        public bool auto_save_on_close { get; set; }
 
         private Settings () {
             base ("com.github.artemanufrij.graphui");
