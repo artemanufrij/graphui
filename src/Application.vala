@@ -93,7 +93,7 @@ namespace GraphUI {
                     file.make_directory ();
                 }
 
-                AUTOSAVE_FILE = GLib.Path.build_filename (CACHE_FOLDER, "autosave.grv");
+                AUTOSAVE_FILE = GLib.Path.build_filename (CACHE_FOLDER, "autosave.gv");
             } catch (Error e) {
                 warning (e.message);
             }

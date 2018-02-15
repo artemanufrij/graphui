@@ -272,7 +272,7 @@ namespace GraphUI {
                     _ ("Cancel"), Gtk.ResponseType.CANCEL,
                     _ ("Save"), Gtk.ResponseType.ACCEPT);
 
-                file_dialog.set_current_name (_ ("New Graphviz.grv"));
+                file_dialog.set_current_name (_ ("New Graphviz.gv"));
 
                 var filter = new Gtk.FileFilter ();
                 filter.set_filter_name ("Graphviz");
