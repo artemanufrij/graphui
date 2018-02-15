@@ -48,7 +48,9 @@
             <description>
                 <p>New:</p>
                 <ul>
-                    <li>Option for autosave on closing</li>
+                    <li>Option for 'autosave on closing'</li>
+                    <li>Associate with MimeType text/vnd.graphviz</li>
+                    <li>Open a graphviz file directly from Files</li>
                 </ul>
                 <p>Improvements:</p>
                 <ul>

@@ -215,7 +215,7 @@ namespace GraphUI {
 
             var filter = new Gtk.FileFilter ();
             filter.set_filter_name (_ ("Graphviz"));
-            filter.add_mime_type ("text/plain");
+            filter.add_mime_type ("text/vnd.graphviz");
 
             file_dialog.add_filter (filter);
 
@@ -230,7 +230,7 @@ namespace GraphUI {
             read_file_content (current_file);
         }
 
-        private void read_file_content (File file) {
+        public void read_file_content (File file) {
             text.buffer.text = "";
             try {
                 DataInputStream dis = new DataInputStream (file.read ());
@@ -272,11 +272,11 @@ namespace GraphUI {
                     _ ("Cancel"), Gtk.ResponseType.CANCEL,
                     _ ("Save"), Gtk.ResponseType.ACCEPT);
 
-                file_dialog.set_current_name (_ ("New Graphviz.txt"));
+                file_dialog.set_current_name (_ ("New Graphviz.grv"));
 
                 var filter = new Gtk.FileFilter ();
                 filter.set_filter_name ("Graphviz");
-                filter.add_mime_type ("text/plain");
+                filter.add_mime_type ("text/vnd.graphviz");
 
                 file_dialog.add_filter (filter);
 

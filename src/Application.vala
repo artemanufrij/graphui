@@ -40,6 +40,7 @@ namespace GraphUI {
         }
 
         construct {
+            this.flags |= GLib.ApplicationFlags.HANDLES_OPEN;
             this.application_id = "com.github.artemanufrij.graphui";
             create_cache_folder ();
 
@@ -92,7 +93,7 @@ namespace GraphUI {
                     file.make_directory ();
                 }
 
-                AUTOSAVE_FILE = GLib.Path.build_filename (CACHE_FOLDER, "autosave.txt");
+                AUTOSAVE_FILE = GLib.Path.build_filename (CACHE_FOLDER, "autosave.grv");
             } catch (Error e) {
                 warning (e.message);
             }
@@ -108,6 +109,13 @@ namespace GraphUI {
 
             mainwindow = new MainWindow ();
             mainwindow.set_application (this);
+        }
+
+        public override void open (File[] files, string hint) {
+            activate ();
+            if (files [0].query_exists ()) {
+                mainwindow.read_file_content (files [0]);
+            }
         }
     }
 }
