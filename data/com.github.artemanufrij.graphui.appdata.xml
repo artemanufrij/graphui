@@ -44,6 +44,14 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="0.1.5" date="2018-02-20">
+            <description>
+                <p>Fixed:</p>
+                <ul>
+                    <li>gschema file</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.1.4" date="2018-02-20">
             <description>
                 <p>New:</p>
