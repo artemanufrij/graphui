@@ -115,6 +115,7 @@ namespace GraphUI {
         public override void open (File[] files, string hint) {
             activate ();
             if (files [0].query_exists ()) {
+                mainwindow.current_file = files [0];
                 mainwindow.read_file_content (files [0]);
             }
         }

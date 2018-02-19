@@ -44,6 +44,14 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="0.1.6" date="2018-02-25">
+            <description>
+                <p>Fixed:</p>
+                <ul>
+                    <li>Ctrl+S behaviour for opened file from 'Files'</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.1.5" date="2018-02-20">
             <description>
                 <p>Fixed:</p>

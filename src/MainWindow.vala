@@ -30,7 +30,7 @@ namespace GraphUI {
         Services.GraphViz graphviz;
         Settings settings;
 
-        File ? current_file = null;
+        public File ? current_file {get; set; default = null; }
 
         Gtk.HeaderBar headerbar;
         Gtk.SourceView text;
@@ -335,7 +335,7 @@ namespace GraphUI {
             if (current_file != null) {
                 file_dialog.set_current_name (Utils.strip_filename (current_file.get_basename ()));
             } else {
-                file_dialog.set_current_name (_("Export"));
+                file_dialog.set_current_name (_ ("Export"));
             }
 
             var filter_png = new Gtk.FileFilter ();
