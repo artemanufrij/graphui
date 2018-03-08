@@ -97,6 +97,7 @@ namespace GraphUI {
             headerbar = new Gtk.HeaderBar ();
             headerbar.title = _ ("GraphUI");
             headerbar.show_close_button = true;
+            headerbar.get_style_context ().add_class ("default-decoration");
 
             app_menu = new Gtk.MenuButton ();
             app_menu.valign = Gtk.Align.CENTER;
