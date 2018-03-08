@@ -1,6 +1,6 @@
 <div>
   <h1 align="center">GraphUI</h1>
-  <h3 align="center">Graph Visualization based on <a href="https://www.graphviz.org">graphviz</a></h3>
+  <h3 align="center"><img src="data/icons/64/com.github.artemanufrij.graphui.svg"/><br>Graph Visualization based on <a href="https://www.graphviz.org">graphviz</a></h3>
   <p align="center">Designed for <a href="https://elementary.io">elementary OS</a></p>
 </div>
 
