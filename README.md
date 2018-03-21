@@ -35,7 +35,7 @@ git clone https://github.com/artemanufrij/graphui.git
 cd graphui
 ```
 
-Create **build** folder, compile and start application
+Create **build** folder, and compile the application
 ```
 mkdir build
 cd build
