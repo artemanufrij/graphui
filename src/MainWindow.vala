@@ -246,19 +246,9 @@ namespace GraphUI {
         public void read_file_content (File file) {
             text.buffer.text = "";
             try {
-                DataInputStream dis = new DataInputStream (file.read ());
-                string line;
-
-                while ((line = dis.read_line ()) != null) {
-                    if (text.buffer.text == "") {
-                        text.buffer.text = line;
-                    } else {
-                        text.buffer.text += "\n" + line;
-                    }
-                }
-
-                dis.close ();
-
+                string content = "";
+                FileUtils.get_contents (file.get_path (), out content);
+                text.buffer.text = content;
                 headerbar.title = file.get_basename ();
             } catch (Error err) {
                 warning (err.message);
