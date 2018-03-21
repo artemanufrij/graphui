@@ -16,3 +16,35 @@
 <br/>
 
 ![screenshot](screenshots/Screenshot.png)
+
+## Install from Github.
+
+As first you need elementary SDK
+```
+sudo apt install elementary-sdk
+```
+
+Install dependencies
+```
+sudo apt install libgtksourceview-3.0-dev, graphviz
+```
+
+Clone repository and change directory
+```
+git clone https://github.com/artemanufrij/graphui.git
+cd playmymusic
+```
+
+Create **build** folder, compile and start application
+```
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+make
+```
+
+Install and start Play My Music on your system
+```
+sudo make install
+com.github.artemanufrij.graphui
+```
