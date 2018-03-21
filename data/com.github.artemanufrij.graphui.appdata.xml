@@ -44,6 +44,18 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="0.1.7" date="2018-03-25">
+            <description>
+                <p>New:</p>
+                <ul>
+                    <li>Added po/pot content for localization</li>
+                </ul>
+                <p>Fixed:</p>
+                <ul>
+                    <li>relative path for 'image' parameter</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.1.6" date="2018-02-25">
             <description>
                 <p>Fixed:</p>
