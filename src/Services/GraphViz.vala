@@ -43,10 +43,6 @@ namespace GraphUI.Services {
             }
         }
 
-        construct {
-            output_txt = GraphUIApp.instance.CACHE_FOLDER + "/output.txt";
-        }
-
         private GraphViz () {
         }
 
@@ -65,14 +61,19 @@ namespace GraphUI.Services {
             file_src.dispose ();
         }
 
-        public void create_preview (string content, string format = "dot", string type = "svg") {
-            if (!create_tmp_file (content)) {
+        public void create_preview (string content, string format = "dot", string type = "svg", File ? file = null) {
+            if (file == null && !create_tmp_file (content)) {
                 return;
             }
 
+            if (file != null) {
+                output_txt = file.get_path ();
+            } else {
+                output_txt = GraphUIApp.instance.CACHE_FOLDER + "/output.txt";
+            }
             output_image = GraphUIApp.instance.CACHE_FOLDER + "/output.svg";
 
-            var command = ("%s -T%s %s -o %s").printf (format, type, output_txt, output_image);
+            var command = ("%s -T%s \"%s\" -o %s").printf (format, type, output_txt, output_image);
             string processout = "";
             string stderr = "";
             int status = 0;

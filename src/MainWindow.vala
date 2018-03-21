@@ -202,7 +202,7 @@ namespace GraphUI {
                 return;
             }
 
-            graphviz.create_preview (graph_text, format_chooser.active_id);
+            graphviz.create_preview (graph_text, format_chooser.active_id, "svg", current_file);
         }
 
         public void check_for_autosave () {
