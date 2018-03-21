@@ -32,7 +32,7 @@ sudo apt install libgtksourceview-3.0-dev, graphviz
 Clone repository and change directory
 ```
 git clone https://github.com/artemanufrij/graphui.git
-cd playmymusic
+cd graphui
 ```
 
 Create **build** folder, compile and start application
@@ -43,7 +43,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 make
 ```
 
-Install and start Play My Music on your system
+Install and start GraphUI on your system
 ```
 sudo make install
 com.github.artemanufrij.graphui
