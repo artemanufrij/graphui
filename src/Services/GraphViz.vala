@@ -46,11 +46,11 @@ namespace GraphUI.Services {
         private GraphViz () {
         }
 
-        public void export (string path, string content, string format) {
+        public void export (string path, string content, string format, File ? file = null) {
             if (!path.down ().has_suffix ("svg")) {
-                create_preview (content, format, "png");
+                create_preview (content, format, "png", file);
             } else {
-                create_preview (content, format);
+                create_preview (content, format, "svg", file);
             }
 
             var file_dst = File.new_for_path (path);
@@ -61,32 +61,39 @@ namespace GraphUI.Services {
             file_src.dispose ();
         }
 
-        public void create_preview (string content, string format = "dot", string type = "svg", File ? file = null) {
+        public void create_preview (string content, string format = "dot", string type = "png", File ? file = null) {
             if (file == null && !create_tmp_file (content)) {
                 return;
             }
 
+            var work_dir = GraphUIApp.instance.CACHE_FOLDER;
+
             if (file != null) {
                 output_txt = file.get_path ();
+                work_dir = file.get_parent ().get_path ();
             } else {
                 output_txt = GraphUIApp.instance.CACHE_FOLDER + "/output.txt";
             }
             output_image = GraphUIApp.instance.CACHE_FOLDER + "/output.svg";
 
-            var command = ("%s -T%s \"%s\" -o %s").printf (format, type, output_txt, output_image);
+            string[] spawn_args = {format, "-T%s".printf (type), "%s".printf (output_txt), "-o", "%s".printf (output_image)};
+            string[] spawn_env = Environ.get ();
+
             string processout = "";
             string stderr = "";
             int status = 0;
 
             try {
-                Process.spawn_command_line_sync (
-                    command,
+                Process.spawn_sync (
+                    work_dir,
+                    spawn_args,
+                    spawn_env,
+                    SpawnFlags.SEARCH_PATH,
+                    null,
                     out processout,
                     out stderr,
-                    out status
-                    );
+                    out status);
             } catch (SpawnError e) {
-                stdout.printf ("Error: %s\n", e.message);
                 error (e.message);
                 return;
             }
@@ -101,17 +108,7 @@ namespace GraphUI.Services {
 
         private bool create_tmp_file (string content) {
             try {
-                File file = File.new_for_path (output_txt);
-                if (file.query_exists ()) {
-                    file.delete ();
-                }
-                FileIOStream ios = file.create_readwrite (FileCreateFlags.PRIVATE);
-
-                FileOutputStream os = ios.output_stream as FileOutputStream;
-                os.write (content.data);
-                os.close ();
-                ios.close ();
-                file.dispose ();
+                FileUtils.set_contents (output_txt, content);
                 return true;
             } catch (Error err) {
                 warning (err.message);

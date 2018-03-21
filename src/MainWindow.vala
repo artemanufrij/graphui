@@ -149,7 +149,7 @@ namespace GraphUI {
             headerbar.pack_start (save_as);
 
             var compile = new Gtk.Button.from_icon_name ("media-playback-start-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
-            compile.tooltip_text = "F5";
+            compile.tooltip_text = _ ("Compile [F5]");
             compile.clicked.connect (create_preview);
             headerbar.pack_end (compile);
 
@@ -202,7 +202,11 @@ namespace GraphUI {
                 return;
             }
 
-            graphviz.create_preview (graph_text, format_chooser.active_id, "svg", current_file);
+            if (current_file != null) {
+                save_file_action ();
+            }
+
+            graphviz.create_preview (graph_text, format_chooser.active_id, "png", current_file);
         }
 
         public void check_for_autosave () {
@@ -302,22 +306,9 @@ namespace GraphUI {
                     return;
                 }
             }
-            if (current_file.query_exists ()) {
-                try {
-                    current_file.delete ();
-                } catch (Error err) {
-                    warning (err.message);
-                    return;
-                }
-            }
 
             try {
-                FileIOStream ios = current_file.create_readwrite (FileCreateFlags.PRIVATE);
-                FileOutputStream os = ios.output_stream as FileOutputStream;
-                os.write (text.buffer.text.data);
-                os.close ();
-                ios.close ();
-                create_preview ();
+                FileUtils.set_contents (current_file.get_path (), text.buffer.text);
             } catch (Error err) {
                 warning (err.message);
                 return;
