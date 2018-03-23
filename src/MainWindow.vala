@@ -150,7 +150,10 @@ namespace GraphUI {
 
             var compile = new Gtk.Button.from_icon_name ("media-playback-start-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
             compile.tooltip_text = _ ("Compile [F5]");
-            compile.clicked.connect (create_preview);
+            compile.clicked.connect (
+                () => {
+                    create_preview ();
+                });
             headerbar.pack_end (compile);
 
             format_chooser = new Gtk.ComboBoxText ();
@@ -162,7 +165,10 @@ namespace GraphUI {
             format_chooser.active_id = "dot";
             format_chooser.tooltip_text = _ ("Type");
             format_chooser.valign = Gtk.Align.CENTER;
-            format_chooser.changed.connect (create_preview);
+            format_chooser.changed.connect (
+                () => {
+                    create_preview ();
+                });
 
             headerbar.pack_end (format_chooser);
 
@@ -196,13 +202,13 @@ namespace GraphUI {
             check_for_autosave ();
         }
 
-        public void create_preview () {
+        public void create_preview (bool save = true) {
             var graph_text = text.buffer.text.strip ();
             if (graph_text.length == 0) {
                 return;
             }
 
-            if (current_file != null) {
+            if (save && current_file != null) {
                 save_file_action ();
             }
 
@@ -299,6 +305,7 @@ namespace GraphUI {
 
             try {
                 FileUtils.set_contents (current_file.get_path (), text.buffer.text);
+                create_preview (false);
             } catch (Error err) {
                 warning (err.message);
                 return;
