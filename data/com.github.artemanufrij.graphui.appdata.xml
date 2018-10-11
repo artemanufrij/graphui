@@ -7,7 +7,7 @@
     <name>GraphUI</name>
     <summary>Graph Visualization</summary>
     <description>
-        <p>Graph visualization based on graphviz.</p>
+        <p>Graph visualization based on graphviz with included a text editor and a preview area</p>
         <p>Supported types:</p>
         <ul>
             <li>dot</li>
