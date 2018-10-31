@@ -43,51 +43,36 @@ namespace GraphUI {
 
         construct {
             settings = Settings.get_default ();
-            settings.notify["use-dark-theme"].connect (
-                () => {
-                    Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.use_dark_theme;
-                    if (settings.use_dark_theme) {
-                        app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
-                    } else {
-                        app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR));
-                    }
-                });
+            settings.notify["use-dark-theme"].connect (() => {
+                Gtk.Settings.get_default ().gtk_application_prefer_dark_theme = settings.use_dark_theme;
+            });
 
             graphviz = Services.GraphViz.instance;
-            graphviz.image_created.connect (
-                () => {
-                    image.set_from_file (graphviz.output_image);
-                    stack.visible_child_name = "image";
-                    alert_view.description = "";
-                });
-            graphviz.error.connect (
-                (message) => {
-                    image.set_from_file (null);
-                    stack.visible_child_name = "alert";
-                    alert_view.title = _ ("Error");
-                    alert_view.description = message;
-                    alert_view.icon_name = "dialog-error-symbolic";
-                });
+            graphviz.image_created.connect (() => {
+                image.set_from_file (graphviz.output_image);
+                stack.visible_child_name = "image";
+                alert_view.description = "";
+            });
+            graphviz.error.connect ((message) => {
+                image.set_from_file (null);
+                stack.visible_child_name = "alert";
+                alert_view.title = _ ("Error");
+                alert_view.description = message;
+                alert_view.icon_name = "dialog-error-symbolic";
+            });
         }
 
         public MainWindow () {
             load_settings ();
             build_ui ();
-            this.configure_event.connect (
-                (event) => {
-                    settings.window_width = event.width;
-                    settings.window_height = event.height;
-                    return false;
-                });
-            this.delete_event.connect (
-                () => {
-                    if (settings.auto_save_on_close && text.buffer.text.strip ().length > 0) {
-                        save_file_action (true);
-                    }
+            this.delete_event.connect (() => {
+                if (settings.auto_save_on_close && text.buffer.text.strip ().length > 0) {
+                    save_file_action (true);
+                }
 
-                    save_settings ();
-                    return false;
-                });
+                save_settings ();
+                return false;
+            });
         }
 
         private void build_ui () {
@@ -97,30 +82,23 @@ namespace GraphUI {
             headerbar = new Gtk.HeaderBar ();
             headerbar.title = _ ("GraphUI");
             headerbar.show_close_button = true;
-            headerbar.get_style_context ().add_class ("default-decoration");
 
             app_menu = new Gtk.MenuButton ();
             app_menu.valign = Gtk.Align.CENTER;
-            if (settings.use_dark_theme) {
-                app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
-            } else {
-                app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR));
-            }
+            app_menu.set_image (new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.LARGE_TOOLBAR));
 
             var settings_menu = new Gtk.Menu ();
 
             var menu_item_preferences = new Gtk.MenuItem.with_label (_ ("Preferences"));
-            menu_item_preferences.activate.connect (
-                () => {
-                    var preferences = new Dialogs.Preferences (this);
-                    preferences.run ();
-                });
+            menu_item_preferences.activate.connect (() => {
+                var preferences = new Dialogs.Preferences (this);
+                preferences.run ();
+            });
 
             var menu_item_export = new Gtk.MenuItem.with_label (_ ("Export"));
-            menu_item_export.activate.connect (
-                () => {
-                    export_action ();
-                });
+            menu_item_export.activate.connect (() => {
+                export_action ();
+            });
 
             settings_menu.append (menu_item_export);
             settings_menu.append (new Gtk.SeparatorMenuItem ());
@@ -129,6 +107,8 @@ namespace GraphUI {
 
             app_menu.popup = settings_menu;
             headerbar.pack_end (app_menu);
+
+            header_build_style_switcher ();
 
             var new_file = new Gtk.Button.from_icon_name ("document-new", Gtk.IconSize.LARGE_TOOLBAR);
             new_file.clicked.connect (new_file_action);
@@ -141,19 +121,17 @@ namespace GraphUI {
             headerbar.pack_start (open_file);
 
             var save_as = new Gtk.Button.from_icon_name ("document-save-as", Gtk.IconSize.LARGE_TOOLBAR);
-            save_as.clicked.connect (
-                () => {
-                    save_file_action ();
-                });
+            save_as.clicked.connect (() => {
+                save_file_action ();
+            });
             save_as.tooltip_text = _ ("Save File");
             headerbar.pack_start (save_as);
 
             var compile = new Gtk.Button.from_icon_name ("media-playback-start-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
             compile.tooltip_text = _ ("Compile [F5]");
-            compile.clicked.connect (
-                () => {
-                    create_preview ();
-                });
+            compile.clicked.connect (() => {
+                create_preview ();
+            });
             headerbar.pack_end (compile);
 
             format_chooser = new Gtk.ComboBoxText ();
@@ -165,10 +143,9 @@ namespace GraphUI {
             format_chooser.active_id = "dot";
             format_chooser.tooltip_text = _ ("Type");
             format_chooser.valign = Gtk.Align.CENTER;
-            format_chooser.changed.connect (
-                () => {
-                    create_preview ();
-                });
+            format_chooser.changed.connect (() => {
+                create_preview ();
+            });
 
             headerbar.pack_end (format_chooser);
 
@@ -200,6 +177,16 @@ namespace GraphUI {
             this.show_all ();
 
             check_for_autosave ();
+        }
+
+        private void header_build_style_switcher () {
+            var mode_switch = new Granite.ModeSwitch.from_icon_name ("display-brightness-symbolic", "weather-clear-night-symbolic");
+            mode_switch.valign = Gtk.Align.CENTER;
+            mode_switch.active = settings.use_dark_theme;
+            mode_switch.notify["active"].connect (() => {
+                settings.use_dark_theme = mode_switch.active;
+            });
+            headerbar.pack_end (mode_switch);
         }
 
         public void create_preview (bool save = true) {
@@ -365,6 +352,11 @@ namespace GraphUI {
             this.get_position (out x, out y);
             settings.window_x = x;
             settings.window_y = y;
+
+            int width, height;
+            this.get_size (out width, out height);
+            settings.window_height = height;
+            settings.window_width = width;
         }
     }
 }

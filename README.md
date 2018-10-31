@@ -28,7 +28,7 @@ sudo apt install elementary-sdk
 
 Install dependencies
 ```
-sudo apt install libgtksourceview-3.0-dev, graphviz
+sudo apt install libgtksourceview-3.0-dev graphviz
 ```
 
 Clone repository and change directory

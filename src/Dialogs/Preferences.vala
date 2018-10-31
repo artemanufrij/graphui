@@ -34,9 +34,7 @@ namespace GraphUI.Dialogs {
         }
 
         public Preferences (Gtk.Window parent) {
-            Object (
-                transient_for: parent
-            );
+            Object (transient_for: parent, deletable: false, resizable: false);
             build_ui ();
 
             this.response.connect ((source, response_id) => {
@@ -57,14 +55,6 @@ namespace GraphUI.Dialogs {
             grid.row_spacing = 12;
             grid.margin = 12;
 
-            var use_dark_theme_label = new Gtk.Label (_("Use Dark Theme"));
-            use_dark_theme_label.halign = Gtk.Align.START;
-            var use_dark_theme = new Gtk.Switch ();
-            use_dark_theme.active = settings.use_dark_theme;
-            use_dark_theme.notify["active"].connect (() => {
-                settings.use_dark_theme = use_dark_theme.active;
-            });
-
             var save_on_close_label = new Gtk.Label (_("Autosave on closing"));
             save_on_close_label.halign = Gtk.Align.START;
             var save_on_close = new Gtk.Switch ();
@@ -73,10 +63,8 @@ namespace GraphUI.Dialogs {
                 settings.auto_save_on_close = save_on_close.active;
             });
 
-            grid.attach (use_dark_theme_label, 0, 0);
-            grid.attach (use_dark_theme, 1, 0);
-            grid.attach (save_on_close_label, 0, 1);
-            grid.attach (save_on_close, 1, 1);
+            grid.attach (save_on_close_label, 0, 0);
+            grid.attach (save_on_close, 1, 0);
 
             content.pack_start (grid, false, false, 0);
 

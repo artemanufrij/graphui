@@ -55,7 +55,7 @@ namespace GraphUI.Services {
 
             var file_dst = File.new_for_path (path);
             var file_src = File.new_for_path (output_image);
-            file_src.copy_async (file_dst, GLib.FileCopyFlags.OVERWRITE);
+            file_src.copy_async.begin (file_dst, GLib.FileCopyFlags.OVERWRITE);
 
             file_dst.dispose ();
             file_src.dispose ();

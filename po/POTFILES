@@ -1,0 +1,6 @@
+src/Services/GraphViz.vala
+src/Dialogs/Preferences.vala
+src/Utils/Utils.vala
+src/Settings.vala
+src/MainWindow.vala
+src/Application.vala
