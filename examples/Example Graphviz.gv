@@ -1,0 +1,25 @@
+digraph dfd2 {
+        node [shape=record style=filled fillcolor="#64baff" color="#333333"]
+	edge [color="#333333"]
+        subgraph level0 {
+		enti1 [label="Customer" shape=box fillcolor="#9bdb4d"]
+		enti2 [label="Manager" shape=box fillcolor="#Ad65d6"]
+        }
+        subgraph cluster_level1 {
+                label="Level 1"
+		color="#666666"
+		fillcolor="#fafafa"
+		style=filled
+                proc1 [label="{<f0> 1.0|<f1> One process here\n\n\n}" shape=Mrecord]
+                proc2 [label="{<f0> 2.0|<f1> Other process here\n\n\n}" shape=Mrecord]
+                store1 [label="<f0>   |<f1> Data store one" fillcolor="#ffa154"]
+                store2 [label="<f0>   |<f1> Data store two" fillcolor="#f9c440"]
+                {rank=same; store1, store2}
+        }
+        enti1 -> proc1
+        enti2 -> proc2
+        store1 -> proc1
+        store2 -> proc2
+        proc1 -> store2
+        store2 -> proc1 
+}
