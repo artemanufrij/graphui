@@ -6,6 +6,7 @@ add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format (meson.project_name()), la
 subdir('src')
 subdir('po')
 subdir('data')
+subdir('schemas')
 
 executable(
     meson.project_name(),
