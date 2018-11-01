@@ -36,7 +36,10 @@
     <url type="homepage">https://artemanufrij.github.io</url>
     <url type="bugtracker">https://github.com/artemanufrij/graphui/issues</url>
     <url type="help">https://github.com/artemanufrij/graphui/issues</url>
+    <url type="donation">https://www.paypal.me/ArtemAnufrij</url>
+    <url type="translate">https://github.com/artemanufrij/graphui</url>
     <update_contact>artem.anufrij@live.de</update_contact>
+    <launchable type="desktop-id">com.github.artemanufrij.graphui.desktop</launchable>
     <screenshots>
         <screenshot type="default">
             <caption>Example</caption>
