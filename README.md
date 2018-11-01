@@ -37,16 +37,10 @@ git clone https://github.com/artemanufrij/graphui.git
 cd graphui
 ```
 
-Create **build** folder, and compile the application
+Compile, install and start GraphUI on your system
 ```
-mkdir build
+meson build --prefix=/usr
 cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-make
-```
-
-Install and start GraphUI on your system
-```
-sudo make install
+sudo ninja install
 com.github.artemanufrij.graphui
 ```
