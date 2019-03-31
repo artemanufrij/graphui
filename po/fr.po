@@ -1,49 +1,99 @@
-# French translations for PACKAGE package.
-# Copyright (C) 2019 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# NathanBnm, 2019.
+# French translations for com.github.artemanufrij.graphui package.
+# Copyright (C) 2019 THE com.github.artemanufrij.graphui'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.graphui package.
+# Automatically generated, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE\n"
+"Project-Id-Version: com.github.artemanufrij.graphui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-29 21:15+0900\n"
-"PO-Revision-Date: 2019-01-18 16:23+0100\n"
-"Last-Translator: NathanBnm\n"
-"Language-Team: Français\n"
+"POT-Creation-Date: 2019-03-31 15:09+0200\n"
+"PO-Revision-Date: 2019-03-31 15:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../src/MainWindow.vala:67
+#: src/Dialogs/Preferences.vala:58
+msgid "Autosave on closing"
+msgstr ""
+
+#: src/MainWindow.vala:59
 msgid "Error"
-msgstr "Erreur"
+msgstr ""
 
-#: ../src/MainWindow.vala:98 ../src/MainWindow.vala:263
+#: src/MainWindow.vala:83 src/MainWindow.vala:256
 msgid "GraphUI"
-msgstr "GraphUI"
+msgstr ""
 
-#: ../src/MainWindow.vala:112
+#: src/MainWindow.vala:92
 msgid "Preferences"
-msgstr "Préférences"
+msgstr ""
 
-#: ../src/MainWindow.vala:119 ../src/MainWindow.vala:320
+#: src/MainWindow.vala:98 src/MainWindow.vala:314
 msgid "Export"
-msgstr "Exporter"
+msgstr ""
 
-#: ../src/MainWindow.vala:135
+#: src/MainWindow.vala:115
 msgid "New File"
-msgstr "Nouveau fichier"
+msgstr ""
 
-#: ../src/MainWindow.vala:140
+#: src/MainWindow.vala:120
 msgid "Open File"
-msgstr "Ouvrir un fichier"
+msgstr ""
 
-#: ../src/MainWindow.vala:148
+#: src/MainWindow.vala:127
 msgid "Save File"
-msgstr "Enregistrer le fichier"
+msgstr ""
 
-#: ../src/MainWindow.vala:152
+#: src/MainWindow.vala:131
 msgid "Compile [F5]"
-msgstr "Compiler [F5]"
+msgstr ""
+
+#: src/MainWindow.vala:144
+msgid "Type"
+msgstr ""
+
+#: src/MainWindow.vala:164
+msgid "Graph Visualization"
+msgstr ""
+
+#: src/MainWindow.vala:164
+msgid ""
+"represent structural information as diagrams of abstract graphs and networks"
+msgstr ""
+
+#: src/MainWindow.vala:216
+msgid "Choose an graphviz file…"
+msgstr ""
+
+#: src/MainWindow.vala:219
+msgid "_Cancel"
+msgstr ""
+
+#: src/MainWindow.vala:220
+msgid "_Open"
+msgstr ""
+
+#: src/MainWindow.vala:223
+msgid "Graphviz"
+msgstr ""
+
+#: src/MainWindow.vala:268 src/MainWindow.vala:306
+msgid "Save as…"
+msgstr ""
+
+#: src/MainWindow.vala:270 src/MainWindow.vala:308
+msgid "Cancel"
+msgstr ""
+
+#: src/MainWindow.vala:271 src/MainWindow.vala:309
+msgid "Save"
+msgstr ""
+
+#: src/MainWindow.vala:273
+msgid "New Graphviz.gv"
+msgstr ""

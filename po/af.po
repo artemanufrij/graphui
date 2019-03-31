@@ -1,4 +1,98 @@
+# Afrikaans translations for com.github.artemanufrij.graphui package.
+# Copyright (C) 2019 THE com.github.artemanufrij.graphui'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.graphui package.
+# Automatically generated, 2019.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: com.github.artemanufrij.graphui\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-31 15:09+0200\n"
+"PO-Revision-Date: 2019-03-31 15:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: af\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Dialogs/Preferences.vala:58
+msgid "Autosave on closing"
+msgstr ""
+
+#: src/MainWindow.vala:59
+msgid "Error"
+msgstr ""
+
+#: src/MainWindow.vala:83 src/MainWindow.vala:256
+msgid "GraphUI"
+msgstr ""
+
+#: src/MainWindow.vala:92
+msgid "Preferences"
+msgstr ""
+
+#: src/MainWindow.vala:98 src/MainWindow.vala:314
+msgid "Export"
+msgstr ""
+
+#: src/MainWindow.vala:115
+msgid "New File"
+msgstr ""
+
+#: src/MainWindow.vala:120
+msgid "Open File"
+msgstr ""
+
+#: src/MainWindow.vala:127
+msgid "Save File"
+msgstr ""
+
+#: src/MainWindow.vala:131
+msgid "Compile [F5]"
+msgstr ""
+
+#: src/MainWindow.vala:144
+msgid "Type"
+msgstr ""
+
+#: src/MainWindow.vala:164
+msgid "Graph Visualization"
+msgstr ""
+
+#: src/MainWindow.vala:164
+msgid ""
+"represent structural information as diagrams of abstract graphs and networks"
+msgstr ""
+
+#: src/MainWindow.vala:216
+msgid "Choose an graphviz file…"
+msgstr ""
+
+#: src/MainWindow.vala:219
+msgid "_Cancel"
+msgstr ""
+
+#: src/MainWindow.vala:220
+msgid "_Open"
+msgstr ""
+
+#: src/MainWindow.vala:223
+msgid "Graphviz"
+msgstr ""
+
+#: src/MainWindow.vala:268 src/MainWindow.vala:306
+msgid "Save as…"
+msgstr ""
+
+#: src/MainWindow.vala:270 src/MainWindow.vala:308
+msgid "Cancel"
+msgstr ""
+
+#: src/MainWindow.vala:271 src/MainWindow.vala:309
+msgid "Save"
+msgstr ""
+
+#: src/MainWindow.vala:273
+msgid "New Graphviz.gv"
+msgstr ""
