@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=GraphUI
 GenericName=GraphUI
-Comment=Graph Visualisation
+Comment=Graph Visualization
 Keywords=graph;visual;draw;
 Exec=com.github.artemanufrij.graphui %U
 Icon=com.github.artemanufrij.graphui

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 15:09+0200\n"
+"POT-Creation-Date: 2019-03-31 15:26+0200\n"
 "PO-Revision-Date: 2019-03-31 15:09+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,7 +25,8 @@ msgid "GraphUI"
 msgstr ""
 
 #: data/com.github.artemanufrij.graphui.desktop.in:5
-msgid "Graph Visualisation"
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:8
+msgid "Graph Visualization"
 msgstr ""
 
 #: data/com.github.artemanufrij.graphui.desktop.in:6
@@ -34,10 +35,6 @@ msgstr ""
 
 #: data/com.github.artemanufrij.graphui.desktop.in:8
 msgid "com.github.artemanufrij.graphui"
-msgstr ""
-
-#: data/com.github.artemanufrij.graphui.appdata.xml.in:8
-msgid "Graph Visualization"
 msgstr ""
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:10
