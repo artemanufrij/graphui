@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.artemanufrij.graphui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 15:30+0200\n"
+"POT-Creation-Date: 2019-03-31 15:36+0200\n"
 "PO-Revision-Date: 2019-03-31 15:09+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: src/MainWindow.vala:83 src/MainWindow.vala:256
+#: src/MainWindow.vala:83 src/MainWindow.vala:258
 msgid "GraphUI"
 msgstr ""
 
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Preferences"
 msgstr ""
 
-#: src/MainWindow.vala:98 src/MainWindow.vala:314
+#: src/MainWindow.vala:98 src/MainWindow.vala:316
 msgid "Export"
 msgstr ""
 
@@ -67,34 +67,42 @@ msgid ""
 "Represent structural information as diagrams of abstract graphs and networks"
 msgstr ""
 
-#: src/MainWindow.vala:216
+#: src/MainWindow.vala:185
+msgid "Light mode"
+msgstr ""
+
+#: src/MainWindow.vala:186
+msgid "Dark mode"
+msgstr ""
+
+#: src/MainWindow.vala:218
 msgid "Choose an graphviz file…"
 msgstr ""
 
-#: src/MainWindow.vala:219
+#: src/MainWindow.vala:221
 msgid "_Cancel"
 msgstr ""
 
-#: src/MainWindow.vala:220
+#: src/MainWindow.vala:222
 msgid "_Open"
 msgstr ""
 
-#: src/MainWindow.vala:223
+#: src/MainWindow.vala:225
 msgid "Graphviz"
 msgstr ""
 
-#: src/MainWindow.vala:268 src/MainWindow.vala:306
+#: src/MainWindow.vala:270 src/MainWindow.vala:308
 msgid "Save as…"
 msgstr ""
 
-#: src/MainWindow.vala:270 src/MainWindow.vala:308
+#: src/MainWindow.vala:272 src/MainWindow.vala:310
 msgid "Cancel"
 msgstr ""
 
-#: src/MainWindow.vala:271 src/MainWindow.vala:309
+#: src/MainWindow.vala:273 src/MainWindow.vala:311
 msgid "Save"
 msgstr ""
 
-#: src/MainWindow.vala:273
+#: src/MainWindow.vala:275
 msgid "New Graphviz.gv"
 msgstr ""
