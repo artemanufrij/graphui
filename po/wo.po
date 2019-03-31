@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.artemanufrij.graphui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 15:15+0200\n"
+"POT-Creation-Date: 2019-03-31 15:30+0200\n"
 "PO-Revision-Date: 2019-03-31 15:09+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: src/MainWindow.vala:164
 msgid ""
-"represent structural information as diagrams of abstract graphs and networks"
+"Represent structural information as diagrams of abstract graphs and networks"
 msgstr ""
 
 #: src/MainWindow.vala:216
