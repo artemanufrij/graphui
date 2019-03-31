@@ -1,15 +1,15 @@
 # Dutch translations for com.github.artemanufrij.graphui package.
 # Copyright (C) 2019 THE com.github.artemanufrij.graphui'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.artemanufrij.graphui package.
-# Automatically generated, 2019.
+# Heimen Stoffels, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.artemanufrij.graphui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 15:09+0200\n"
+"POT-Creation-Date: 2019-03-31 15:11+0200\n"
 "PO-Revision-Date: 2019-03-31 15:09+0200\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -19,81 +19,83 @@ msgstr ""
 
 #: src/Dialogs/Preferences.vala:58
 msgid "Autosave on closing"
-msgstr ""
+msgstr "Automatisch oplsaan bij afsluiten"
 
 #: src/MainWindow.vala:59
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 #: src/MainWindow.vala:83 src/MainWindow.vala:256
 msgid "GraphUI"
-msgstr ""
+msgstr "GraphUI"
 
 #: src/MainWindow.vala:92
 msgid "Preferences"
-msgstr ""
+msgstr "Voorkeuren"
 
 #: src/MainWindow.vala:98 src/MainWindow.vala:314
 msgid "Export"
-msgstr ""
+msgstr "Exporteren"
 
 #: src/MainWindow.vala:115
 msgid "New File"
-msgstr ""
+msgstr "Nieuw bestand"
 
 #: src/MainWindow.vala:120
 msgid "Open File"
-msgstr ""
+msgstr "Bestand openen"
 
 #: src/MainWindow.vala:127
 msgid "Save File"
-msgstr ""
+msgstr "Bestand opslaan"
 
 #: src/MainWindow.vala:131
 msgid "Compile [F5]"
-msgstr ""
+msgstr "Compileren [F5]"
 
 #: src/MainWindow.vala:144
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: src/MainWindow.vala:164
 msgid "Graph Visualization"
-msgstr ""
+msgstr "Graph-visualisatie"
 
 #: src/MainWindow.vala:164
 msgid ""
 "represent structural information as diagrams of abstract graphs and networks"
 msgstr ""
+"toont structurele informatie als diagrammen van abstracte grafieken en "
+"netwerken"
 
 #: src/MainWindow.vala:216
 msgid "Choose an graphviz file…"
-msgstr ""
+msgstr "Kies een graphviz-bestand…"
 
 #: src/MainWindow.vala:219
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuleren"
 
 #: src/MainWindow.vala:220
 msgid "_Open"
-msgstr ""
+msgstr "_Openen"
 
 #: src/MainWindow.vala:223
 msgid "Graphviz"
-msgstr ""
+msgstr "Graphviz"
 
 #: src/MainWindow.vala:268 src/MainWindow.vala:306
 msgid "Save as…"
-msgstr ""
+msgstr "Opslaan als…"
 
 #: src/MainWindow.vala:270 src/MainWindow.vala:308
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: src/MainWindow.vala:271 src/MainWindow.vala:309
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #: src/MainWindow.vala:273
 msgid "New Graphviz.gv"
-msgstr ""
+msgstr "Nieuwe Graphviz.gv"
