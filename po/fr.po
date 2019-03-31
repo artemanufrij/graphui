@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.artemanufrij.graphui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 15:11+0200\n"
+"POT-Creation-Date: 2019-03-31 15:15+0200\n"
 "PO-Revision-Date: 2019-03-31 15:09+0200\n"
 "Last-Translator: NathanBnm\n"
 "Language-Team: Français\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: src/Dialogs/Preferences.vala:58
 msgid "Autosave on closing"
-msgstr ""
+msgstr "Enregistrer automatiquement à la fermeture"
 
 #: src/MainWindow.vala:59
 msgid "Error"
@@ -55,47 +55,47 @@ msgstr "Compiler [F5]"
 
 #: src/MainWindow.vala:144
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: src/MainWindow.vala:164
 msgid "Graph Visualization"
-msgstr ""
+msgstr "Visualisation du graphe"
 
 #: src/MainWindow.vala:164
 msgid ""
 "represent structural information as diagrams of abstract graphs and networks"
 msgstr ""
+"représentant l'information structurelle sous forme de diagrammes et de "
+"réseaux abstraits"
 
 #: src/MainWindow.vala:216
 msgid "Choose an graphviz file…"
-msgstr ""
+msgstr "Choississez un fichier graphviz…"
 
 #: src/MainWindow.vala:219
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuler"
 
 #: src/MainWindow.vala:220
 msgid "_Open"
-msgstr ""
+msgstr "_Ouvrir"
 
 #: src/MainWindow.vala:223
-#, fuzzy
 msgid "Graphviz"
-msgstr "GraphUI"
+msgstr "Graphviz"
 
 #: src/MainWindow.vala:268 src/MainWindow.vala:306
 msgid "Save as…"
-msgstr ""
+msgstr "Enregistrer sous…"
 
 #: src/MainWindow.vala:270 src/MainWindow.vala:308
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: src/MainWindow.vala:271 src/MainWindow.vala:309
-#, fuzzy
 msgid "Save"
-msgstr "Enregistrer le fichier"
+msgstr "Enregistrer"
 
 #: src/MainWindow.vala:273
 msgid "New Graphviz.gv"
-msgstr ""
+msgstr "Nouveau Graphviz.gv"
