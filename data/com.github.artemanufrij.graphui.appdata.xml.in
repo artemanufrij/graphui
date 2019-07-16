@@ -47,6 +47,14 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="1.1.0" date="2019-07-17">
+            <description>
+                <p>New:</p>
+                <ul>
+                    <li>Quit app by Ctrl+Q</li>
+                </ul>
+            </description>
+        </release>
         <release version="1.0.3" date="2019-07-16">
             <description>
                 Small improvements by Nathan Bonnemains
