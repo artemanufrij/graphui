@@ -226,7 +226,7 @@ namespace GraphUI {
             file_dialog.add_filter (filter);
 
             if (file_dialog.run () != Gtk.ResponseType.ACCEPT) {
-                current_file.dispose ();
+                file_dialog.destroy ();
                 return;
             }
             var filname = file_dialog.get_filename ();
