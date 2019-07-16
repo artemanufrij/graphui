@@ -1,0 +1,210 @@
+# French translations for extra package.
+# Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-31 15:26+0200\n"
+"PO-Revision-Date: 2019-03-31 15:09+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: data/com.github.artemanufrij.graphui.desktop.in:3
+#: data/com.github.artemanufrij.graphui.desktop.in:4
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:7
+msgid "GraphUI"
+msgstr "GraphUI"
+
+#: data/com.github.artemanufrij.graphui.desktop.in:5
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:8
+msgid "Graph Visualization"
+msgstr "Visualisation de graphe"
+
+#: data/com.github.artemanufrij.graphui.desktop.in:6
+msgid "graph;visual;draw;"
+msgstr "graphe;visuel;dessin;"
+
+#: data/com.github.artemanufrij.graphui.desktop.in:8
+msgid "com.github.artemanufrij.graphui"
+msgstr "com.github.artemanufrij.graphui"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:10
+msgid ""
+"Graph visualization based on graphviz with included a text editor and a "
+"preview area"
+msgstr ""
+"Visualisation de graphe basée sur graphviz avec éditeur de texte et zone "
+"d'aperçu"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:11
+msgid "Supported types:"
+msgstr "Types supportés :"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:13
+msgid "dot"
+msgstr "dot"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:14
+msgid "neato"
+msgstr "neato"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:15
+msgid "fdp"
+msgstr "fdp"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:16
+msgid "sfdp"
+msgstr "sfdp"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:17
+msgid "twopi"
+msgstr "twopi"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:19
+msgid "Shortcuts:"
+msgstr "Raccourcis :"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:21
+msgid "F5: Compile"
+msgstr "F5 : Compiler"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:22
+msgid "Ctrl+N: New File"
+msgstr "Ctrl + N : Nouveau fichier"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:23
+msgid "Ctrl+O: Open File"
+msgstr "Ctrl + O : Ouvrir un fichier"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:24
+msgid "Ctrl+S: Save File"
+msgstr "Ctrl + S : Enregistrer le fichier"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:35
+msgid "Artem Anufrij"
+msgstr "Artem Anufrij"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:45
+msgid "Example"
+msgstr "Exemple"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:51
+msgid "Fix for flatpak"
+msgstr "Correction pour flatpak"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:57
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:79
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:108
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:129
+msgid "New:"
+msgstr "Nouveau :"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:59
+msgid "Theme switcher"
+msgstr "Sélecteur de thème"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:60
+msgid "Switched to meson"
+msgstr "Passage à meson"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:62
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:84
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:92
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:100
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:121
+msgid "Fixed:"
+msgstr "Correction :"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:64
+msgid "Restore correct window size"
+msgstr "Restauration de la taille de fenêtre correcte"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:66
+msgid "Translation:"
+msgstr "Traduction :"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:68
+msgid "Dutch (by Heimen Stoffels)"
+msgstr "Néerlandais (par Heimen Stoffels)"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:73
+msgid "Prepare for JUNO"
+msgstr "Préparation pour JUNO"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:81
+msgid "Added po/pot content for localization"
+msgstr "Ajout des fichiers po/pot pour la traduction"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:82
+msgid "Show Preview after saving"
+msgstr "Affichage de l'aperçu après sauvegarde"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:86
+msgid "relative path for 'image' parameter"
+msgstr "Chemin relatif pour le paramètre « image »"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:94
+msgid "Ctrl+S behaviour for opened file from 'Files'"
+msgstr ""
+"Comportement du raccourci Ctrl + S pour les fichiers ouverts depuis « "
+"Fichiers »"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:102
+msgid "gschema file"
+msgstr "Fichier gschema"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:110
+msgid "Export result as .svg or .png"
+msgstr "Exportez le résultat en .svg ou .png"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:111
+msgid "Option for 'autosave on closing'"
+msgstr "Option « Sauvegarder automatiquement à la fermeture »"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:112
+msgid "Associate with MimeType text/vnd.graphviz"
+msgstr "Association avec le type MIME text/vnd.graphviz"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:113
+msgid "Open a graphviz file directly from Files"
+msgstr "Ouvrez un fichier graphviz directement depuis « Fichiers »"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:115
+msgid "Improvements:"
+msgstr "Améliorations :"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:117
+msgid "Moved to SourceView for undo support"
+msgstr "Passage à SourceView pour le support des retours arrière"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:118
+msgid "Reload image after saving file"
+msgstr "Rechargement de l'image après l'enregistrement du fichier"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:119
+msgid "Clear resutl image for 'New File'"
+msgstr "Effacement de l'image de résultat pour « Nouveau fichier »"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:123
+msgid "Clear error message after successful compile"
+msgstr "Effacement des messages d'erreurs après compilation réussie"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:131
+msgid "Support for dot, neato, fdp, sfdp, twopi"
+msgstr "Prise en charge de dot, neato, fdp, sfdp, twopi"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:132
+msgid "Show details on error screen"
+msgstr "Affichage des détails sur les erreurs"
+
+#: data/com.github.artemanufrij.graphui.appdata.xml.in:137
+msgid "Initial Release"
+msgstr "Version initiale"

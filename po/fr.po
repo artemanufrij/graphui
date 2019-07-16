@@ -1,5 +1,109 @@
+# French translations for com.github.artemanufrij.graphui package.
+# Copyright (C) 2019 THE com.github.artemanufrij.graphui'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.artemanufrij.graphui package.
+# NathanBnm, 2019.
+#
 msgid ""
 msgstr ""
+"Project-Id-Version: com.github.artemanufrij.graphui\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-31 15:36+0200\n"
+"PO-Revision-Date: 2019-03-31 15:09+0200\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Plural-Forms: nplurals=2; plural=n>1;\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/Dialogs/Preferences.vala:58
+msgid "Autosave on closing"
+msgstr "Enregistrer automatiquement à la fermeture"
+
+#: src/MainWindow.vala:59
+msgid "Error"
+msgstr "Erreur"
+
+#: src/MainWindow.vala:83 src/MainWindow.vala:258
+msgid "GraphUI"
+msgstr "GraphUI"
+
+#: src/MainWindow.vala:92
+msgid "Preferences"
+msgstr "Préférences"
+
+#: src/MainWindow.vala:98 src/MainWindow.vala:316
+msgid "Export"
+msgstr "Exporter"
+
+#: src/MainWindow.vala:115
+msgid "New File"
+msgstr "Nouveau fichier"
+
+#: src/MainWindow.vala:120
+msgid "Open File"
+msgstr "Ouvrir un fichier"
+
+#: src/MainWindow.vala:127
+msgid "Save File"
+msgstr "Enregistrer le fichier"
+
+#: src/MainWindow.vala:131
+msgid "Compile [F5]"
+msgstr "Compiler [F5]"
+
+#: src/MainWindow.vala:144
+msgid "Type"
+msgstr "Type"
+
+#: src/MainWindow.vala:164
+msgid "Graph Visualization"
+msgstr "Visualisation du graphe"
+
+#: src/MainWindow.vala:164
+msgid ""
+"Represent structural information as diagrams of abstract graphs and networks"
+msgstr ""
+"Représente l'information structurelle sous forme de diagrammes et de réseaux "
+"abstraits"
+
+#: src/MainWindow.vala:185
+msgid "Light mode"
+msgstr "Thème clair"
+
+#: src/MainWindow.vala:186
+msgid "Dark mode"
+msgstr "Thème sombre"
+
+#: src/MainWindow.vala:218
+msgid "Choose an graphviz file…"
+msgstr "Choississez un fichier graphviz…"
+
+#: src/MainWindow.vala:221
+msgid "_Cancel"
+msgstr "_Annuler"
+
+#: src/MainWindow.vala:222
+msgid "_Open"
+msgstr "_Ouvrir"
+
+#: src/MainWindow.vala:225
+msgid "Graphviz"
+msgstr "Graphviz"
+
+#: src/MainWindow.vala:270 src/MainWindow.vala:308
+msgid "Save as…"
+msgstr "Enregistrer sous…"
+
+#: src/MainWindow.vala:272 src/MainWindow.vala:310
+msgid "Cancel"
+msgstr "Annuler"
+
+#: src/MainWindow.vala:273 src/MainWindow.vala:311
+msgid "Save"
+msgstr "Enregistrer"
+
+#: src/MainWindow.vala:275
+msgid "New Graphviz.gv"
+msgstr "Nouveau Graphviz.gv"

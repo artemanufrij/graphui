@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the com.github.artemanufrij.graphui package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: com.github.artemanufrij.graphui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 22:31+0100\n"
+"POT-Creation-Date: 2019-03-31 15:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,87 +17,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/MainWindow.vala:67
+#: src/Dialogs/Preferences.vala:58
+msgid "Autosave on closing"
+msgstr ""
+
+#: src/MainWindow.vala:59
 msgid "Error"
 msgstr ""
 
-#: ../src/MainWindow.vala:98 ../src/MainWindow.vala:263
+#: src/MainWindow.vala:83 src/MainWindow.vala:258
 msgid "GraphUI"
 msgstr ""
 
-#: ../src/MainWindow.vala:112
+#: src/MainWindow.vala:92
 msgid "Preferences"
 msgstr ""
 
-#: ../src/MainWindow.vala:119 ../src/MainWindow.vala:320
+#: src/MainWindow.vala:98 src/MainWindow.vala:316
 msgid "Export"
 msgstr ""
 
-#: ../src/MainWindow.vala:135
+#: src/MainWindow.vala:115
 msgid "New File"
 msgstr ""
 
-#: ../src/MainWindow.vala:140
+#: src/MainWindow.vala:120
 msgid "Open File"
 msgstr ""
 
-#: ../src/MainWindow.vala:148
+#: src/MainWindow.vala:127
 msgid "Save File"
 msgstr ""
 
-#: ../src/MainWindow.vala:152
+#: src/MainWindow.vala:131
 msgid "Compile [F5]"
 msgstr ""
 
-#: ../src/MainWindow.vala:163
+#: src/MainWindow.vala:144
 msgid "Type"
 msgstr ""
 
-#: ../src/MainWindow.vala:181
+#: src/MainWindow.vala:164
 msgid "Graph Visualization"
 msgstr ""
 
-#: ../src/MainWindow.vala:181
+#: src/MainWindow.vala:164
 msgid ""
-"represent structural information as diagrams of abstract graphs and networks"
+"Represent structural information as diagrams of abstract graphs and networks"
 msgstr ""
 
-#: ../src/MainWindow.vala:223
+#: src/MainWindow.vala:185
+msgid "Light mode"
+msgstr ""
+
+#: src/MainWindow.vala:186
+msgid "Dark mode"
+msgstr ""
+
+#: src/MainWindow.vala:218
 msgid "Choose an graphviz file…"
 msgstr ""
 
-#: ../src/MainWindow.vala:226
+#: src/MainWindow.vala:221
 msgid "_Cancel"
 msgstr ""
 
-#: ../src/MainWindow.vala:227
+#: src/MainWindow.vala:222
 msgid "_Open"
 msgstr ""
 
-#: ../src/MainWindow.vala:230
+#: src/MainWindow.vala:225
 msgid "Graphviz"
 msgstr ""
 
-#: ../src/MainWindow.vala:275 ../src/MainWindow.vala:312
+#: src/MainWindow.vala:270 src/MainWindow.vala:308
 msgid "Save as…"
 msgstr ""
 
-#: ../src/MainWindow.vala:277 ../src/MainWindow.vala:314
+#: src/MainWindow.vala:272 src/MainWindow.vala:310
 msgid "Cancel"
 msgstr ""
 
-#: ../src/MainWindow.vala:278 ../src/MainWindow.vala:315
+#: src/MainWindow.vala:273 src/MainWindow.vala:311
 msgid "Save"
 msgstr ""
 
-#: ../src/MainWindow.vala:280
+#: src/MainWindow.vala:275
 msgid "New Graphviz.gv"
-msgstr ""
-
-#: ../src/Dialogs/Preferences.vala:60
-msgid "Use Dark Theme"
-msgstr ""
-
-#: ../src/Dialogs/Preferences.vala:68
-msgid "Autosave on closing"
 msgstr ""
