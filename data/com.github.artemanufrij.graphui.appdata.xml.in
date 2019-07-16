@@ -47,6 +47,19 @@
         </screenshot>
     </screenshots>
     <releases>
+        <release version="1.0.3" date="2019-07-16">
+            <description>
+                Small improvements by Nathan Bonnemains
+                <p>Fixed:</p>
+                <ul>
+                    <li>Cancel button for "Open File Dialog"</li>
+                </ul>
+                <p>Translation:</p>
+                <ul>
+                    <li>French (by Nathan Bonnemains)</li>
+                </ul>
+            </description>
+        </release>
         <release version="1.0.2" date="2018-11-01">
             <description>
                 Fix for flatpak
