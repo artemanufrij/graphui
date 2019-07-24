@@ -47,18 +47,19 @@ namespace GraphUI {
 
             var action_open = new SimpleAction ("open", null);
             add_action (action_open);
-            string[] accel_open = {"<Control>o", "0"};
+            string[] accel_open = {"<Control>o"};
             set_accels_for_action ("app.open", accel_open);
             action_open.activate.connect (
                 () => {
                     if (mainwindow != null) {
+                        warning("app action");
                         mainwindow.open_file_action ();
                     }
                 });
 
             var action_save = new SimpleAction ("save", null);
             add_action (action_save);
-            string[] accel_save = {"<Control>s", "0"};
+            string[] accel_save = {"<Control>s"};
             set_accels_for_action ("app.save", accel_save);
             action_save.activate.connect (
                 () => {
@@ -69,7 +70,7 @@ namespace GraphUI {
 
             var action_new = new SimpleAction ("new", null);
             add_action (action_new);
-            string[] accel_new = {"<Control>n", "0"};
+            string[] accel_new = {"<Control>n"};
             set_accels_for_action ("app.new", accel_new);
             action_new.activate.connect (
                 () => {
@@ -80,7 +81,7 @@ namespace GraphUI {
 
             var action_quit = new SimpleAction ("quit", null);
             add_action (action_quit);
-            string[] accel_quit = {"<Control>q", "0"};
+            string[] accel_quit = {"<Control>q"};
             set_accels_for_action ("app.quit", accel_quit);
             action_quit.activate.connect (
                 () => {
@@ -91,7 +92,7 @@ namespace GraphUI {
 
             var action_compile = new SimpleAction ("compile", null);
             add_action (action_compile);
-            string[] accel_compile = {"F5", "0"};
+            string[] accel_compile = {"F5"};
             set_accels_for_action ("app.compile", accel_compile);
             action_compile.activate.connect (
                 () => {
