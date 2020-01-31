@@ -16,6 +16,7 @@ executable(
         dependency('gtk+-3.0'),
         dependency('granite'),
         dependency('gtksourceview-3.0')
+        dependency('glib-2.0', version: '>=2.30.0')
     ],
     install: true
 )
