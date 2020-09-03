@@ -87,7 +87,7 @@ msgstr "Ctrl+O: Abrir FIcheiro"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:24
 msgid "Ctrl+S: Save File"
-msgstr "Ctrl+S: Gravar Ficheiro"
+msgstr "Ctrl+S: Guardar Ficheiro"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:35
 msgid "Artem Anufrij"
@@ -146,7 +146,7 @@ msgstr "Acionado conteúdo no po/pot para localização"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:82
 msgid "Show Preview after saving"
-msgstr "Exibir antevisão depois de gravar"
+msgstr "Exibir antevisão depois de guardar"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:86
 msgid "relative path for 'image' parameter"
@@ -166,7 +166,7 @@ msgstr "Exportar resultado como .svg ou .png"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:111
 msgid "Option for 'autosave on closing'"
-msgstr "Opção para 'gravar automaticamente ao fechar'"
+msgstr "Opção para 'guardar automaticamente ao fechar'"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:112
 msgid "Associate with MimeType text/vnd.graphviz"
@@ -186,7 +186,7 @@ msgstr "Mudança para o SourceView para desfazer o suporte"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:118
 msgid "Reload image after saving file"
-msgstr "Recarregar imagem depois de gravar ficheiro"
+msgstr "Recarregar imagem depois de guardar o ficheiro"
 
 #: data/com.github.artemanufrij.graphui.appdata.xml.in:119
 msgid "Clear resutl image for 'New File'"
