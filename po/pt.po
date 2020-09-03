@@ -20,7 +20,7 @@ msgstr ""
 
 #: src/Dialogs/Preferences.vala:58
 msgid "Autosave on closing"
-msgstr "Gravar automaticamente ao fechar"
+msgstr "Guardar automaticamente ao fechar"
 
 #: src/MainWindow.vala:59
 msgid "Error"
@@ -48,7 +48,7 @@ msgstr "Abrir Ficheiro"
 
 #: src/MainWindow.vala:127
 msgid "Save File"
-msgstr "Gravar Ficheiro"
+msgstr "Guardar Ficheiro"
 
 #: src/MainWindow.vala:131
 msgid "Compile [F5]"
@@ -92,7 +92,7 @@ msgstr "Graphviz"
 
 #: src/MainWindow.vala:270 src/MainWindow.vala:308
 msgid "Save as…"
-msgstr "Gravar como..."
+msgstr "Guardar como..."
 
 #: src/MainWindow.vala:272 src/MainWindow.vala:310
 msgid "Cancel"
@@ -100,7 +100,7 @@ msgstr "Cancelar"
 
 #: src/MainWindow.vala:273 src/MainWindow.vala:311
 msgid "Save"
-msgstr "Gravar"
+msgstr "Guardar"
 
 #: src/MainWindow.vala:275
 msgid "New Graphviz.gv"
