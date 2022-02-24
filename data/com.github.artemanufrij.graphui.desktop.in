@@ -2,7 +2,7 @@
 Name=GraphUI
 GenericName=GraphUI
 Comment=Graph Visualization
-Keywords=graph;visual;draw;
+Keywords=graph;visual;draw;graphviz;
 Exec=com.github.artemanufrij.graphui %U
 Icon=com.github.artemanufrij.graphui
 Terminal=false
